@@ -1,0 +1,14 @@
+name: merge-request
+
+on: [push]
+  #pull_request:
+   # branches: [ "main" ]
+
+jobs:
+  tessting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: call action
+        uses: checkout@v3
+      - name: execute command
+        run: echo "Just a test"
