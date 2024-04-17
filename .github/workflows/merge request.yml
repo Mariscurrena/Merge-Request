@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: call action
-        uses: checkout@v3
+        uses: actions/checkout@v3
       - name: execute command
         run: echo "Just a test"
