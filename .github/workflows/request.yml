@@ -3,7 +3,7 @@ name: merge-request
 on:
   pull_request:
     branches:
-      - develop
+      - untested
     types:
       - closed
 
