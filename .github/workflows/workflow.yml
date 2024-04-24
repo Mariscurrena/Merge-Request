@@ -4,5 +4,5 @@ on: [push]
 
 jobs:
   checkout:
-    name: Fortify Static  Application Security Testing
-    uses: ./.github/workflows/analysis.yml
+    name: Fortify Static Application Security Testing
+    uses: "./.github/workflows/analysis.yml"
