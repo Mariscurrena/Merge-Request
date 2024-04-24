@@ -12,10 +12,20 @@ jobs:
   merge:
     name: Merge Phase
     needs: [analysis]
+    runs-on: ubuntu-latest
     #if:
       #This "if" will be the validator about security before the branch would be merge
       #github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Merged Successfully" 
       
+    ##This section will made the auto merge
+    steps:
+    - id: automerge
+      name: automerge
+      uses: "pascalgn/automerge-action@v0.15.6"
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    ##Automerge confirmation message
+    - name: feedback
+      if: ${{ steps.automerge.outputs.mergeResult == 'merged' }}
+      run: |
+        echo "Pull request ${{ steps.automerge.outputs.pullRequestNumber }} merged!"
