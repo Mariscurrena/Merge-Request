@@ -1,4 +1,6 @@
-name: merge-request
+##In GitHub Actions there's not an action called Merge Request, this kind of action is from GitLab, however, in GitHub
+##we have pull-request, which actually makes the same thing, the difference is purely the begining of the action.
+name: pull-request
 
 on:
   pull_request:
