@@ -1,13 +1,17 @@
 name: merge-request
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - closed
 
+# Later, in the jobs section of your actions.yml file.
 jobs:
-  tessting:
-    if: github.event.merged == true
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: call action
-        uses: actions/checkout@v3
-      - name: execute command
-        run: echo "Just a test"
+    - run: |
+        echo The PR was successfully merged.
