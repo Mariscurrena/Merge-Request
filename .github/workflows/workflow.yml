@@ -19,14 +19,10 @@ jobs:
       
     ##This section will made the auto merge
     steps:
-    - id: automerge
-      name: automerge
-      uses: "pascalgn/automerge-action@v0.15.6"
-      env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        MERGE_LABELS: ""
-    ##Automerge confirmation message
-    - name: feedback
-      if: ${{ steps.automerge.outputs.mergeResult == 'merged' }}
-      run: |
-        echo "Pull request ${{ steps.automerge.outputs.pullRequestNumber }} merged!"
+      - name: automerge
+        uses: "mtanzi/action-automerge@v1"
+        id: automerge
+        with:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          source: 'untested'
+          target: 'main'
