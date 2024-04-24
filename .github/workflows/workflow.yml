@@ -8,3 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2 
+    
+  merge:
+    name: Merge Phase
+    #if:
+      #This "if" will be the validator about security before the branch would be merge
+    runs-on: ubuntu-latest
+    needs: [analysis]
+    steps:
+      - run: echo "Merged Successfully" 
+      
