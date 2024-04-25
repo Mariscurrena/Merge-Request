@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   analysis:
+    name: Analysis
     uses: ./.github/workflows/analysis.yml
     
   merge:

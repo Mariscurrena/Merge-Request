@@ -5,6 +5,7 @@ on:
 
 jobs:
     analysis:
+        name: Fortify Static Application Security Testing
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2 
