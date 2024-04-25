@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   analysis:
-      uses: /./.github/workflows/analysis.yml@main
+    uses: ./.github/workflows/analysis.yml@main
     
   merge:
     name: Merge Phase
