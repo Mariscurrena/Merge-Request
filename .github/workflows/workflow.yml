@@ -4,10 +4,7 @@ on: [push]
 
 jobs:
   analysis:
-    name: Fortify Static Application Security Testing
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2 
+      uses: ./.github/workflows/analysis.yml
     
   merge:
     name: Merge Phase
