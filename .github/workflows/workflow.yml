@@ -7,12 +7,10 @@ jobs:
     name: Analysis
     uses: ./.github/workflows/analysis.yml
     
+  ##This section will made the auto merge
   merge:
     name: Merge Phase
     needs: [analysis]
-    #if:
-      #This "if" will be the validator about security before the branch would be merge
-      #github.event.pull_request.merged == true
-      
-    ##This section will made the auto merge
+    if: github.event.pull_request.opened == true
+    #This "if" will be the validator about security before the branch would be merge
     uses: ./.github/workflows/merge.yml
