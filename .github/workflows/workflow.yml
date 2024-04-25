@@ -11,6 +11,6 @@ jobs:
   merge:
     name: Merge Phase
     needs: [analysis]
-    if: github.event.pull_request.opened == true
     #This "if" will be the validator about security before the branch would be merge
+    if: github.event.pull_request == true
     uses: ./.github/workflows/merge.yml
