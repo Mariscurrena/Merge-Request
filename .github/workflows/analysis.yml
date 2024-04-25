@@ -1,7 +1,7 @@
 name: Fortify Static Application Security Testing
 
 on:
-    workflow_dispatch:
+    workflow_call:
 
 jobs:
     analysis:
