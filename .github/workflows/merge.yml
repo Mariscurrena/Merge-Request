@@ -23,7 +23,7 @@ jobs:
                 MERGE_REQUIRED_APPROVALS: "0"
                 UPDATE_LABELS: ""
                 UPDATE_METHOD: "rebase"
-                BASE_BRANCHES: "main, development"
+                BASE_BRANCHES: "main"
 
             ##Automerge confirmation message
             - name: feedback
