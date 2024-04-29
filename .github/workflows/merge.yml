@@ -2,7 +2,6 @@ name: Automerge
 
 on:
     workflow_call:
-permissions: write-all
 
 jobs:
     merge:
@@ -14,6 +13,7 @@ jobs:
               uses: "pascalgn/automerge-action@v0.16.3"
               env:
                 GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+                MERGE_LABELS: "Adding"
             ##Automerge confirmation message
             - name: feedback
               if: ${{ steps.automerge.outputs.mergeResult == 'merged' }}
