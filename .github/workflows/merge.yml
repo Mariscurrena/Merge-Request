@@ -14,6 +14,16 @@ jobs:
               env:
                 GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
                 MERGE_LABELS: "automerge, !work in progress"
+                MERGE_REMOVE_LABELS: "automerge"
+                MERGE_METHOD: "merge"
+                MERGE_COMMIT_MESSAGE: "PRUEB"
+                MERGE_FORKS: "true"
+                MERGE_RETRIES: "1"
+                MERGE_RETRY_SLEEP: "1000"
+                MERGE_REQUIRED_APPROVALS: "0"
+                UPDATE_LABELS: ""
+                UPDATE_METHOD: "rebase"
+
             ##Automerge confirmation message
             - name: feedback
               if: ${{ steps.automerge.outputs.mergeResult == 'merged' }}
