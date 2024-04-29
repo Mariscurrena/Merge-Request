@@ -2,6 +2,7 @@ name: Automerge
 
 on:
     workflow_call:
+permissions: write-all
 
 jobs:
     merge:
@@ -11,8 +12,6 @@ jobs:
             - id: automerge
               name: automerge
               uses: "pascalgn/automerge-action@v0.16.3"
-              permissions:
-                contents: write
               env:
                 GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
             ##Automerge confirmation message
