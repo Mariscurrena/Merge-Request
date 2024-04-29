@@ -7,7 +7,7 @@ jobs:
     name: Analysis
     uses: ./.github/workflows/analysis.yml
     
-  ##This section will made the auto merge
+  ##This section will made the auto merge.
   merge:
     name: Merge Phase
     needs: [analysis]
