@@ -9,10 +9,20 @@ jobs:
     name: Analysis
     uses: ./.github/workflows/analysis.yml
     
+  pull_r:
+    name: Create Pull Request
+    runs-on: ubuntu-latest
+    steps:
+      - id: cpr
+        uses: "peter-evans/create-pull-request@v2"
+        with:
+          branch: development
+          labels: automerge
+    
   ##This section will made the auto merge.
   merge:
     name: Merge Phase
     needs: [analysis]
     #This "if" will be the validator about security before the branch would be merge
-    ##if: contains(github.event.head_commit.message, 'PRUEB')
+    if: contains(github.event.head_commit.message, 'automerge')
     uses: ./.github/workflows/merge.yml
