@@ -13,10 +13,10 @@ jobs:
               uses: "pascalgn/automerge-action@v0.16.3"
               env:
                 GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-                MERGE_LABELS: "automerge, !work in progress"
-                MERGE_REMOVE_LABELS: "automerge"
+                MERGE_LABELS: "automerge"
+                MERGE_REMOVE_LABELS: ""
                 MERGE_METHOD: "squash"
-                MERGE_COMMIT_MESSAGE: "PRUEB"
+                MERGE_COMMIT_MESSAGE: "automerge"
                 MERGE_FORKS: "true"
                 MERGE_RETRIES: "1"
                 MERGE_RETRY_SLEEP: "1000"
