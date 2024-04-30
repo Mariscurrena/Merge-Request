@@ -15,7 +15,7 @@ jobs:
               #  labels: automerge
               env:
                 GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-                #MERGE_LABELS: "automerge"
+                MERGE_LABELS: "automerge"
                 MERGE_REMOVE_LABELS: ""
                 MERGE_METHOD: "squash"
                 MERGE_COMMIT_MESSAGE: "automerge"
