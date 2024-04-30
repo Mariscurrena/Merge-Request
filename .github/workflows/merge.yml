@@ -14,15 +14,15 @@ jobs:
               env:
                 GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
                 MERGE_LABELS: "automerge"
-                MERGE_REMOVE_LABELS: ""
+                #MERGE_REMOVE_LABELS: ""
                 MERGE_METHOD: "squash"
-                MERGE_COMMIT_MESSAGE: "automerge"
+                #MERGE_COMMIT_MESSAGE: "automerge"
                 MERGE_FORKS: "true"
-                MERGE_RETRIES: "1"
-                MERGE_RETRY_SLEEP: "1000"
+                #MERGE_RETRIES: "1"
+                #MERGE_RETRY_SLEEP: "1000"
                 MERGE_REQUIRED_APPROVALS: "0"
-                UPDATE_LABELS: ""
-                UPDATE_METHOD: "rebase"
+                #UPDATE_LABELS: ""
+                UPDATE_METHOD: "squash"
                 BASE_BRANCHES: "main"
 
             ##Automerge confirmation message
