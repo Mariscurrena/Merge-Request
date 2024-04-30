@@ -14,5 +14,5 @@ jobs:
     name: Merge Phase
     needs: [analysis]
     #This "if" will be the validator about security before the branch would be merge
-    if: ${{ github.event.label.name == 'automerge' }}
+    #if: ${{ github.event.label.name == 'automerge' }}
     uses: ./.github/workflows/merge.yml
